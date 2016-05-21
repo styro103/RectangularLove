@@ -5,9 +5,16 @@
 
 import java.lang.Math;
 
-public class Solution 
-{
-    static Rectangle getIntersection(Rectangle A, Rectangle B) //Finds Intersection of Two Rectangles
+public class Intersector
+{      
+    public static void main(String[] args) 
+    {
+        Rectangle X = new Rectangle(0, 0, 1, 1); //Create Rectangle
+        Rectangle Y = new Rectangle(1, 1, 1, 1); //Create Rectangle
+        System.out.println(getIntersection(X, Y)); //Print Rectangle of Intersection
+    }
+	
+	static Rectangle getIntersection(Rectangle A, Rectangle B) //Finds Intersection of Two Rectangles
     {
         Integer rXA = A.leftX + A.width; //Right X Point of First Rectangle
         Integer rXB = B.leftX + B.width; //Right X Point of Second Rectangle
@@ -20,12 +27,5 @@ public class Solution
         
         if (w<0 || h<0) return new Rectangle(-1, -1, -1, -1); //If Rectangles Don't Intersect, Width and/or Height Will be Negative
         else return new Rectangle(lX, bY, w, h); //Return Rectangle of Intersection
-    }
-       
-    public static void main(String[] args) 
-    {
-        Rectangle X = new Rectangle(0, 0, 1, 1); //Create Rectangle
-        Rectangle Y = new Rectangle(1, 1, 1, 1); //Create Rectangle
-        System.out.println(getIntersection(X, Y).toString()); //Print Rectangle of Intersection
     }
 }
